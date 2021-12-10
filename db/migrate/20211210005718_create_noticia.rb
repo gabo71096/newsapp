@@ -1,6 +1,6 @@
-class CreateNews < ActiveRecord::Migration[6.1]
+class CreateNoticia < ActiveRecord::Migration[6.1]
   def change
-    create_table :news do |t|
+    create_table :noticia do |t|
       t.integer :new_id
       t.string :title
       t.string :lower
@@ -10,6 +10,6 @@ class CreateNews < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :news, :new_id
+    add_index :noticia, :new_id
   end
 end

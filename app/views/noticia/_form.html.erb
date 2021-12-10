@@ -1,10 +1,10 @@
-<%= form_with(model: news) do |form| %>
-  <% if news.errors.any? %>
+<%= form_with(model: noticium) do |form| %>
+  <% if noticium.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(news.errors.count, "error") %> prohibited this news from being saved:</h2>
+      <h2><%= pluralize(noticium.errors.count, "error") %> prohibited this noticium from being saved:</h2>
 
       <ul>
-        <% news.errors.each do |error| %>
+        <% noticium.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

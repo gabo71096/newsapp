@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_10_001516) do
+ActiveRecord::Schema.define(version: 2021_12_10_005718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "news", force: :cascade do |t|
+  create_table "noticia", force: :cascade do |t|
     t.integer "new_id"
     t.string "title"
     t.string "lower"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2021_12_10_001516) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["new_id"], name: "index_news_on_new_id"
+    t.index ["new_id"], name: "index_noticia_on_new_id"
   end
 
 end
