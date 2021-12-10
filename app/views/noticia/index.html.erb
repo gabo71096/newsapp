@@ -1,33 +1,15 @@
-<h1>Noticia</h1>
+<%= image_tag "logo.png", class:"main-img mb-3" %>
+<h1 class="title mb-4">News<span class="title">App</span></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Lower</th>
-      <th>Author</th>
-      <th>Body</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @noticia.each do |noticium| %>
-      <tr>
-        <td><%= noticium.title %></td>
-        <td><%= noticium.lower %></td>
-        <td><%= noticium.author %></td>
-        <td><%= noticium.body %></td>
-        <td><%= noticium.image %></td>
-        <td><%= link_to 'Show', noticium %></td>
-        <td><%= link_to 'Edit', edit_noticium_path(noticium) %></td>
-        <td><%= link_to 'Destroy', noticium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Noticium', new_noticium_path %>
+<div class="card-container mx-auto">
+  <% @noticia.each do |noticium| %>
+    <div class="card">
+      <a href="/noticia/<%= noticium.id %>">
+        <img src="<%= noticium.image %>" class="card-img-top" alt="<%= noticium.title %>">
+        <div class="card-body">
+          <h1 class="fs-5 heading mb-0"><%= noticium.title %></h1>
+        </div>
+      </a>
+    </div>
+  <% end %>
+</div>
