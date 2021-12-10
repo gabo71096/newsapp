@@ -1,5 +1,5 @@
 class NoticiaController < ApplicationController
-  before_action :set_noticium, only: %i[ show edit update destroy ]
+  before_action :set_noticium, only: %i[show edit update destroy]
 
   # GET /noticia or /noticia.json
   def index
@@ -7,8 +7,7 @@ class NoticiaController < ApplicationController
   end
 
   # GET /noticia/1 or /noticia/1.json
-  def show
-  end
+  def show; end
 
   # GET /noticia/new
   def new
@@ -16,8 +15,7 @@ class NoticiaController < ApplicationController
   end
 
   # GET /noticia/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /noticia or /noticia.json
   def create
@@ -25,7 +23,7 @@ class NoticiaController < ApplicationController
 
     respond_to do |format|
       if @noticium.save
-        format.html { redirect_to @noticium, notice: "Noticium was successfully created." }
+        format.html { redirect_to @noticium, notice: 'Noticia fue creada exitosamente.' }
         format.json { render :show, status: :created, location: @noticium }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class NoticiaController < ApplicationController
   def update
     respond_to do |format|
       if @noticium.update(noticium_params)
-        format.html { redirect_to @noticium, notice: "Noticium was successfully updated." }
+        format.html { redirect_to @noticium, notice: 'Noticia fue actualizada exitosamente.' }
         format.json { render :show, status: :ok, location: @noticium }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,19 +49,20 @@ class NoticiaController < ApplicationController
   def destroy
     @noticium.destroy
     respond_to do |format|
-      format.html { redirect_to noticia_url, notice: "Noticium was successfully destroyed." }
+      format.html { redirect_to noticia_url, notice: 'Noticia fue eliminada exitosamente.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_noticium
-      @noticium = Noticium.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def noticium_params
-      params.require(:noticium).permit(:title, :lower, :author, :body, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_noticium
+    @noticium = Noticium.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def noticium_params
+    params.require(:noticium).permit(:title, :lower, :author, :body, :image)
+  end
 end
