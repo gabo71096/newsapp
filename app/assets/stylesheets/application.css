@@ -1,5 +1,33 @@
+/* General styling */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+/* News form */
+@media (min-width: 992px) {
+  .yield {
+    width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .yield {
+    width: 90%;
+  }
+}
+
+/* Logo and app title */
 .main-img {
   width: 300px;
+}
+
+a.title {
+  color: #000;
 }
 
 h1.title {
@@ -8,4 +36,34 @@ h1.title {
 
 span.title {
   color: #40b7ad;
+}
+
+/* New Showcase */
+.show-img {
+  max-width: 100%;
+  height: 600px;
+}
+
+.heading,
+.lower,
+.author,
+.body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.lower {
+  color: gray;
+}
+
+.author {
+  color: lightgray;
+}
+
+/* Index */
+.card-container {
+  width: 80%;
+}
+
+div.card {
+  width: 20rem;
 }
