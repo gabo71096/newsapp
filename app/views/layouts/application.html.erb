@@ -25,10 +25,10 @@
 
   <body class="h-100 d-flex flex-column">
     <%= render 'layouts/header' %>
+    <% if notice %>
+      <%= render 'layouts/alert' %>
+    <% end %>
     <div class="w-100 text-center">
-      <% if notice %>
-        <%= render 'layouts/alert' %>
-      <% end %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
