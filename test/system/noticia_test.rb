@@ -15,10 +15,9 @@ class NoticiaTest < ApplicationSystemTestCase
     click_on "New Noticium"
 
     fill_in "Author", with: @noticium.author
+    fill_in "Body", with: @noticium.body
     fill_in "Image", with: @noticium.image
     fill_in "Lower", with: @noticium.lower
-    fill_in "New", with: @noticium.new_id
-    fill_in "Text", with: @noticium.text
     fill_in "Title", with: @noticium.title
     click_on "Create Noticium"
 
@@ -31,10 +30,9 @@ class NoticiaTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Author", with: @noticium.author
+    fill_in "Body", with: @noticium.body
     fill_in "Image", with: @noticium.image
     fill_in "Lower", with: @noticium.lower
-    fill_in "New", with: @noticium.new_id
-    fill_in "Text", with: @noticium.text
     fill_in "Title", with: @noticium.title
     click_on "Update Noticium"
 

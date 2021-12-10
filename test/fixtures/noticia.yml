@@ -1,17 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  new_id: 1
   title: MyString
   lower: MyString
   author: MyString
-  text: MyString
-  image: MyString
+  body: MyText
+  image: MyText
 
 two:
-  new_id: 1
   title: MyString
   lower: MyString
   author: MyString
-  text: MyString
-  image: MyString
+  body: MyText
+  image: MyText

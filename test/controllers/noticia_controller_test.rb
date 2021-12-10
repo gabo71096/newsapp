@@ -17,7 +17,7 @@ class NoticiaControllerTest < ActionDispatch::IntegrationTest
 
   test "should create noticium" do
     assert_difference('Noticium.count') do
-      post noticia_url, params: { noticium: { author: @noticium.author, image: @noticium.image, lower: @noticium.lower, new_id: @noticium.new_id, text: @noticium.text, title: @noticium.title } }
+      post noticia_url, params: { noticium: { author: @noticium.author, body: @noticium.body, image: @noticium.image, lower: @noticium.lower, title: @noticium.title } }
     end
 
     assert_redirected_to noticium_url(Noticium.last)
@@ -34,7 +34,7 @@ class NoticiaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update noticium" do
-    patch noticium_url(@noticium), params: { noticium: { author: @noticium.author, image: @noticium.image, lower: @noticium.lower, new_id: @noticium.new_id, text: @noticium.text, title: @noticium.title } }
+    patch noticium_url(@noticium), params: { noticium: { author: @noticium.author, body: @noticium.body, image: @noticium.image, lower: @noticium.lower, title: @noticium.title } }
     assert_redirected_to noticium_url(@noticium)
   end
 
