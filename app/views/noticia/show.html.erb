@@ -1,27 +1,8 @@
-<p>
-  <strong>Title:</strong>
-  <%= @noticium.title %>
-</p>
+<div class="bg-dark mb-3"><img src="<%= @noticium.image %>" class="rounded show-img"></div>
 
-<p>
-  <strong>Lower:</strong>
-  <%= @noticium.lower %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @noticium.author %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @noticium.body %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @noticium.image %>
-</p>
-
-<%= link_to 'Edit', edit_noticium_path(@noticium) %> |
-<%= link_to 'Back', noticia_path %>
+<div class="w-75 text-center mx-auto">
+  <h1 class="fs-1 mb-3 heading"><%= @noticium.title %></h1>
+  <em><h2 class="fs-3 mb-3 lower"><%= @noticium.lower %></h2></em>
+  <p class="author"><%= @noticium.author %>, <%= @noticium.created_at.in_time_zone('Santiago').strftime("%d/%m/%Y %H:%M:%S") %></p>
+  <p class="body"><%= @noticium.body %></p>
+</div>
