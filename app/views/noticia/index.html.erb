@@ -1,12 +1,19 @@
-<%= image_tag "logo.png", class:"main-img" %>
-<h1 class="title mb-4">News<span class="title">App</span></h1>
+<div class="row mb-5 px-5 gx-0">
+  <div class="col-lg-6">
+    <%= image_tag "logo.png", class:"main-img" %>
+  </div>
+  <div class="col-lg-6 my-auto text-start">
+    <h1 class="title heading mb-4">News<span class="title">App</span></h1>
+    <em><h2 class="title lower">Made By: Gabriel <span class="title">López</span></h2></em>
+  </div>
+</div>
 
 <div class="card-container mx-auto">
   <% @noticia.each do |noticium| %>
-    <div class="card">
+    <div class="card w-100 mb-5">
       <a href="/noticia/<%= noticium.id %>">
         <img src="<%= noticium.image %>" class="card-img-top" alt="<%= noticium.title %>">
-        <div class="card-body">
+        <div class="card-body text-start">
           <h1 class="fs-5 heading mb-0"><%= noticium.title %></h1>
         </div>
       </a>
