@@ -76,3 +76,17 @@ span.title {
 .card-container {
   width: 80%;
 }
+
+/* News */
+
+@media (min-width: 992px) {
+  #filter {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  #filter {
+    width: 90%;
+  }
+}
