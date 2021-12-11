@@ -1,4 +1,4 @@
-<div class="row mb-5 px-5 gx-0">
+<div class="row mb-3 px-5 gx-0">
   <div class="col-lg-6">
     <%= image_tag "logo.png", class:"main-img" %>
   </div>
@@ -7,6 +7,42 @@
     <em><h2 class="title lower">Made By: Gabriel <span class="title">López</span></h2></em>
   </div>
 </div>
+
+<form action="<%= request.original_url %>" method="get" id="filter" class="mx-auto">
+<div class="accordion mb-3" id="accordion-filter">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Filtrar
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion-filter">
+      <div class="accordion-body">
+        <h5>Autores</h5>
+        <%= select_tag :author, options_for_select(@autores, 'author'), form: 'filter', class: 'form-select mb-3' %>
+        <h5>Desde</h5>
+        <input class="form-control mb-3" type="date" name="from" id="from">
+        <h5>Hasta</h5>
+        <input class="form-control mb-3" type="date" name="to" id="to">
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Ordenar
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion-filter">
+      <div class="accordion-body">
+        <%= select_tag :order, options_for_select([['Autor','author'],['Fecha','date']]), form: 'filter', class: 'form-select mb-3' %>
+      </div>
+    </div>
+  </div>
+</div>
+  <input class="btn btn-secondary mb-3" type="submit" value="Filtrar">
+  <a class="btn btn-danger mb-3" href="/">Quitar filtros</a>
+</form>
 
 <div class="card-container mx-auto">
   <% @noticia.each do |noticium| %>
