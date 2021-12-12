@@ -7,4 +7,6 @@
   <p class="body"><%= @noticium.body %></p>
 </div>
 
-<a href="<%= @noticium.id %>/edit" class="btn btn-outline-success">Edit</a>
+<% if session[:user_id] %>
+  <a href="<%= @noticium.id %>/edit" class="btn btn-outline-success">Edit</a>
+<% end %>
