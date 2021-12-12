@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       # Means our user is signed in. Add the authorization to the user
       User.find(session[:user_id]).add_provider(auth_hash)
 
-      render text: "You can now login using #{auth_hash['provider'].capitalize} too!"
+      redirect_to '/', notice: 'Logged in.'
     else
       # Log him in or sign him up
       auth = Authorization.find_or_create(auth_hash)
@@ -16,16 +16,16 @@ class SessionsController < ApplicationController
       # Create the session
       session[:user_id] = auth.user.id
 
-      render text: "Welcome #{auth.user.name}!"
+      redirect_to '/', notice: 'Logged in.'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    render text: "You've logged out!"
+    redirect_to '/', notice: 'Logged out successfully.'
   end
 
   def failure
-    render text: "Sorry, but you didn't allow access to our app!"
+    redirect_to '/', notice: 'There was an error.'
   end
 end
