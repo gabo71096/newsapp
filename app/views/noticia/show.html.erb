@@ -6,3 +6,5 @@
   <p class="author"><%= @noticium.author %>, <%= @noticium.created_at.in_time_zone('Santiago').strftime("%d/%m/%Y %H:%M:%S") %></p>
   <p class="body"><%= @noticium.body %></p>
 </div>
+
+<a href="<%= @noticium.id %>/edit" class="btn btn-outline-success">Edit</a>
