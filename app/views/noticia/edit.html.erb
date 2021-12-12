@@ -4,6 +4,7 @@
 <% if session[:user_id] %>
   <div class="text-center mx-auto yield">
     <%= render 'form', noticium: @noticium %>
+    <%= link_to "Destroy", noticium_path(@noticium), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-outline-danger mt-3" %>
   </div>
 <% else %>
   <div>
