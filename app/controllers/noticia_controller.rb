@@ -2,8 +2,34 @@ class NoticiaController < ApplicationController
   before_action :set_noticium, only: %i[show edit update destroy]
 
   # GET /noticia or /noticia.json
+  # Filter using query params, this is far from optimized.
   def index
-    @noticia = Noticium.all
+    if params.has_key?(:author)
+      @noticia = if params[:order] == 'date'
+                   Noticium.where(author: params[:author]).order('created_at DESC')
+                 elsif params[:order] == 'author'
+                   Noticium.where(author: params[:author]).order('author')
+                 else
+                   Noticium.where(author: params[:author])
+                 end
+    elsif params.has_key?(:from) && params.has_key?(:to)
+      @noticia = if params[:order] == 'date'
+                   Noticium.where(created_at: Time.parse(params[:from])..Time.parse(params[:to])).order('created_at DESC')
+                 elsif params[:order] == 'author'
+                   Noticium.where(created_at: Time.parse(params[:from])..Time.parse(params[:to])).order('author')
+                 else
+                   Noticium.where(created_at: Time.parse(params[:from])..Time.parse(params[:to]))
+                 end
+    elsif params.has_key?(:order)
+      @noticia = if params[:order] == 'date'
+                   Noticium.all.order('created_at DESC')
+                 elsif params[:order] == 'author'
+                   Noticium.all.order('author')
+                 end
+    else
+      @noticia = Noticium.all
+    end
+    @autores = [''] + Noticium.distinct.pluck(:author).sort
   end
 
   # GET /noticia/1 or /noticia/1.json
