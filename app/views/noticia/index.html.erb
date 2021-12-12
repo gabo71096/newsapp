@@ -8,8 +8,7 @@
   </div>
 </div>
 
-<form action="<%= request.original_url %>" method="get" id="filter" class="mx-auto">
-<div class="accordion mb-3" id="accordion-filter">
+<div class="accordion mb-3 mx-auto filter" id="accordion-filter">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -19,11 +18,16 @@
     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion-filter">
       <div class="accordion-body">
         <h5>Autores</h5>
-        <%= select_tag :author, options_for_select(@autores, 'author'), form: 'filter', class: 'form-select mb-3' %>
-        <h5>Desde</h5>
-        <input class="form-control mb-3" type="date" name="from" id="from">
-        <h5>Hasta</h5>
-        <input class="form-control mb-3" type="date" name="to" id="to">
+        <div class="mb-3">
+          <%= select_tag :author, options_for_select(@autores, "author"), class:"form-control", id:'author' %>
+        </div>
+        <form action="/" method="get">
+          <h5>Fecha Desde</h5>
+          <input class="form-control mb-3" type="date" name="from" id="from" required>
+          <h5>Fecha Hasta</h5>
+          <input class="form-control mb-3" type="date" name="to" id="to" required>
+          <input type="submit" class="btn btn-secondary" value="Filtrar por fecha">
+        </form>
       </div>
     </div>
   </div>
@@ -35,14 +39,12 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion-filter">
       <div class="accordion-body">
-        <%= select_tag :order, options_for_select([['Autor','author'],['Fecha','date']]), form: 'filter', class: 'form-select mb-3' %>
+        <%= select_tag :order, options_for_select([["",""],["Autor","author"],["Fecha","date"]]), class:"form-control", id:'order' %>
       </div>
     </div>
   </div>
 </div>
-  <input class="btn btn-secondary mb-3" type="submit" value="Filtrar">
-  <a class="btn btn-danger mb-3" href="/">Quitar filtros</a>
-</form>
+<a class="btn btn-danger mb-3" href="/">Quitar filtros</a>
 
 <div class="card-container mx-auto">
   <% @noticia.each do |noticium| %>
