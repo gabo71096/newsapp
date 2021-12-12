@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'omniauth'
 # Google OAuth2
 gem 'omniauth-google-oauth2'
+# Omniauth CSRF protection
+gem 'omniauth-rails_csrf_protection'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
