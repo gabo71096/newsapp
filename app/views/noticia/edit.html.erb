@@ -1,5 +1,14 @@
 <%= image_tag "logo.png", class:"main-img" %>
 <h1 class="title mb-4">News<span class="title">App</span> Edit</h1>
-<div class="text-center mx-auto yield">
-  <%= render 'form', noticium: @noticium %>
-</div>
+
+<% if session[:user_id] %>
+  <div class="text-center mx-auto yield">
+    <%= render 'form', noticium: @noticium %>
+  </div>
+<% else %>
+  <div>
+    <p>You don't have access to this.</p>
+    <p>Login to add news.</p>
+    <a class="btn btn-outline-danger" href="/login">Login</a>
+  </div>
+<% end %>
