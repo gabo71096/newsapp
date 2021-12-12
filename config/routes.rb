@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get '/login', to: 'sessions#new', as: :login
+  get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
-  match '/auth/:provider/callback', to: 'sessions#create', via: %i[get post]
+  post '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: 'sessions#failure'
   resources :noticia
   root 'noticia#index'
