@@ -19,7 +19,7 @@
       <div class="accordion-body">
         <h5>Autores</h5>
         <div class="mb-3">
-          <%= select_tag :author, options_for_select(@autores, "author"), class:"form-control", id:'author' %>
+          <%= select_tag :author, options_for_select(@autores, "author"), class:"form-select", id:'author' %>
         </div>
         <form action="/" method="get">
           <h5>Fecha Desde</h5>
@@ -39,12 +39,14 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion-filter">
       <div class="accordion-body">
-        <%= select_tag :order, options_for_select([["",""],["Autor","author"],["Fecha","date"]]), class:"form-control", id:'order' %>
+        <%= select_tag :order, options_for_select([["",""],["Autor","author"],["Fecha","date"]]), class:"form-select", id:'order' %>
       </div>
     </div>
   </div>
 </div>
-<a class="btn btn-danger mb-3" href="/">Quitar filtros</a>
+<form action="/" method="get">
+  <input type="submit" value="Quitar Filtros" class="btn btn-danger mb-3">
+</form>
 
 <div class="card-container mx-auto">
   <% @noticia.each do |noticium| %>
