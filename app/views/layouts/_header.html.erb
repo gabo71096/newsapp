@@ -10,6 +10,7 @@
       <div class="navbar-nav me-auto">
         <a class="nav-link lower" aria-current="page" href="/noticia/new">Add new</a>
       </div>
+      <!-- if user is logged in, add log out button -->
       <% if session[:user_id] %>
         <div class="navbar-nav">
           <a class="nav-link lower" style="color:#dc3545;" aria-current="page" href="/logout">Log out</a>

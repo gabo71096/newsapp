@@ -2,7 +2,7 @@ class NoticiaController < ApplicationController
   before_action :set_noticium, only: %i[show edit update destroy]
 
   # GET /noticia or /noticia.json
-  # Filter using query params, this is far from optimized.
+  # Filter using query params, this is far from optimized, but it works when Author or Date is combined with order.
   def index
     if params.has_key?(:author)
       @noticia = if params[:order] == 'date'
@@ -29,6 +29,7 @@ class NoticiaController < ApplicationController
     else
       @noticia = Noticium.all
     end
+    # Send autores distinct and sorted with an empty string to select_tag in index view
     @autores = [''] + Noticium.distinct.pluck(:author).sort
   end
 

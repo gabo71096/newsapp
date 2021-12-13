@@ -1,3 +1,4 @@
+// Redirect on select_tag change
 $("#author").change(function () {
   if (window.location.href.includes("?")) {
     window.location = window.location.href + "&author=" + $(this).val();

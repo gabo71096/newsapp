@@ -1,3 +1,4 @@
+<!-- Added validation, if not logged in show log in, else logout -->
 <% if !session[:user_id] %>
   <a href="/auth/google_oauth2">
     <%= image_tag "google.png", class:"main-img" %><br>
