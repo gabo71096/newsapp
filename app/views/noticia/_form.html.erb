@@ -1,7 +1,7 @@
 <%= form_with(model: noticium) do |form| %>
   <% if noticium.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(noticium.errors.count, "error") %> prohibited this noticium from being saved:</h2>
+      <h2><%= pluralize(noticium.errors.count, "error") %> evito que este form pudiera ser guardado:</h2>
 
       <ul>
         <% noticium.errors.each do |error| %>
