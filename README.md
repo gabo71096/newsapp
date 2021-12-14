@@ -12,7 +12,7 @@ If you want to try it you should have:
 -Yarn (https://yarnpkg.com/getting-started/install).  
 -PostgreSQL (https://www.postgresql.org/download/).
 
-After cloning repo, first make sure you have PostgreSQL up and running, create a role with a password (with db create permission) and put it in an env variable (could be .bashrc in Ubuntu).  
+After cloning repo, first make sure you have PostgreSQL up and running, create a role with a password (with db create permission) and put it in an env variable (could be .bashrc in Ubuntu/Linux).  
 Names are "PG_USER" for username and "PG_PWD" for password.  
 Cd into the folder, run "rails db:create", "rails db:migrate", "rails db:seed", then "rails webpacker:install", and it should be OK to start.
 
