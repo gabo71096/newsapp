@@ -8,7 +8,7 @@ It includes Active Admin so you can perform CRUD in an admin platform.
 If you want to try it you should have:
 
 -RVM installed (https://rvm.io/rvm/install) for managing Ruby, Ruby on Rails, Gem install.  
--Node.js (https://nodejs.org/es/).  
+-Node.js (https://nodejs.org/es/) (NVM is recommended).  
 -Yarn (https://yarnpkg.com/getting-started/install).  
 -PostgreSQL (https://www.postgresql.org/download/).
 
