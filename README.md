@@ -19,7 +19,3 @@ Cd into the folder, run "rails db:migrate", then "rails webpacker:install", and 
 To start server, just execute the command "rails s" and it will initialize.
 
 If you want to use Google Auth you need API Keys from console.cloud.google.com, then put CLIENT_ID and CLIENT_SECRET in your env variable as "CLIENT_ID" and "CLIENT_SECRET".
-
-# Thanks
-
-Thanks to John Elder at Codemy.com and FreeCodeCamp.org for the Ruby on Rails Tutorial.
