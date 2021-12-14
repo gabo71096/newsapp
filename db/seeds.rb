@@ -37,3 +37,8 @@ if Rails.env.production?
   AdminUser.create!(email: ENV['ADMIN_EMAIL'], password: ENV['ADMIN_PWD'],
                     password_confirmation: ENV['ADMIN_PWD'])
 end
+
+if Rails.env.test?
+  AdminUser.create!(email: 'admin@example.com', password: 'password',
+                    password_confirmation: 'password')
+end
