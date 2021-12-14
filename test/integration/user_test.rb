@@ -28,6 +28,8 @@ end
 
 # For some reason I can't login, credentials are in db:seeds in test environment,
 # so I should get the posibility to login, but doesn't work
+# I was reading in internet, and the hash algorithm for the password doesn't work
+# in test environment, I've yet to find a solution.
 # class NewsTest < ApplicationSystemTestCase
 #   def setup
 #     @admin_users = admin_users :one
