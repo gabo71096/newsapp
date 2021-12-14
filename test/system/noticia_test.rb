@@ -1,3 +1,5 @@
+# This test doesn't work because CRUD can only be made after authentication
+# and couldn't pass google auth or active admin
 require "../application_system_test_case"
 
 class NoticiaTest < ApplicationSystemTestCase

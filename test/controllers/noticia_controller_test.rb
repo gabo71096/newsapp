@@ -1,3 +1,4 @@
+# Controller test for routes
 require "../test_helper"
 
 class NoticiaControllerTest < ActionDispatch::IntegrationTest
