@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  lower: MyString
-  author: MyString
-  body: MyText
-  image: MyText
+  title: Titulo 1
+  lower: Bajada de titulo 1
+  author: Autor de ejemplo
+  body: Cuerpo del mensaje
+  image: Imagen de referencia
 
 two:
   title: MyString
