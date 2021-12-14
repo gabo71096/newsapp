@@ -14,7 +14,7 @@ If you want to try it you should have:
 
 After cloning repo, first make sure you have PostgreSQL up and running, create a role and password and put it in an env variable (could be .bashrc in Ubuntu).  
 Names are "PG_USER" for username and "PG_PWD" for password.  
-Cd into the folder, run "rails db:migrate", then "rails webpacker:install", and it should be OK to start.
+Cd into the folder, run "rails db:create", "rails db:migrate", "rails db:seed", then "rails webpacker:install", and it should be OK to start.
 
 To start server, just execute the command "rails s" and it will initialize.
 
